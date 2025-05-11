@@ -17,6 +17,7 @@ public class Player : MonoBehaviour {
     public GameObject moveEffect;
     public Animator camAnim;
     public Text healthDisplay;
+    public AudioSource AudioSource;
 
     public GameObject spawner;
     public GameObject restartDisplay;
@@ -28,6 +29,7 @@ public class Player : MonoBehaviour {
             spawner.SetActive(false);
             restartDisplay.SetActive(true);
             Destroy(gameObject);
+            AudioSource.Play(); 
         }
 
         healthDisplay.text = health.ToString();
